@@ -1,0 +1,4 @@
+django==1.9.1
+mysql-python==1.2.5
+django-markup==0.4
+

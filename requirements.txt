@@ -1,4 +1,9 @@
-django==1.9.1
+# Django
+django==1.9.2
+
+# MariaDB
 mysql-python==1.2.5
-django-markup==0.4
+
+# TIME_ZONE
+pytz==2015.7
 

@@ -1,12 +1,41 @@
+# -*- coding: utf-8 -*-
+
 import os
+import pytz
+
+
+### Core Settings
+
+ABSOLUTE_URL_OVERIDES = []
+ADMINS = [('Kevin', 'ikerol@163.com')]
+ALLOWED_HOSTS = []
+ALLOWED_INCLUDE_ROOTS = []
+CACHES = {
+    'default': {
+        'BACKEND': '',
+        'LOCATION': '/var/tmp/django_cache',
+        'TIMEOUT': 300,
+    }
+}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'TIME_ZONE': 'Asia/Shanghai',
+    }
+}
+DATE_FORMAT = 'N j, Y' # (e.g. Feb 4, 2016)
+DATETIME_FORMAT = 'N j, Y, P' # (e.g. Feb 4, 2016, 5 p.m.)
 
 # Basic config
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 SECRET_KEY = 'change-secret-key-when-deploy-django'
 DEBUG = True
-
-ALLOWED_HOSTS = []
 
 # General project information
 # These are available in the template as SITE_INFO.<title>
@@ -15,30 +44,16 @@ SITE_VARIABLES = {
     'site_descript': 'Personal website powered by Python',
 }
 
-# Databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'wwindb',
-        'USER': 'wwindb',
-        'PASSWORD': 'wwindb',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
-
 # Local settings
 
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-DATE_FORMAT = 'Y-m-d'
 
-# Authentication
+### Auth
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -55,7 +70,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Templates
+
+### Media and Templates
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')
+MEDIA_URL = '/_sources/'
 
 TEMPLATES = [
     {
@@ -73,11 +92,13 @@ TEMPLATES = [
     },
 ]
 
-# Static
+
+### Static Files
+
 # collect all static files together
 STATIC_ROOT = os.path.join(BASE_DIR, 'static-root')
 # either you like, for example: kerolgao.com/static/
-STATIC_URL = '/static/'
+STATIC_URL = '/_static/'
 
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
@@ -88,6 +109,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'home/static'),
 ]
+
+
+### Other settings
 
 # URLs, WSGI, middleware, etc.
 

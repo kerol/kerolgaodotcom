@@ -1,7 +1,6 @@
 About
 =====
+My current running website powered by `Django <http://www.djangoproject.com>`_.
 
-Another version of my personal website powered by `Django <http://www.djangoproject.com>`_.
-
-About deployment: apache+mod_wsgi.
+About deployment: Nginx + uWSGI + Supervisor.
 That's all.

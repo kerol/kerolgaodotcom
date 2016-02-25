@@ -22,5 +22,12 @@ Django setting
 3. static and media files
    todo: collectstatic...
 
+Jquery Fonts
+~~~~~~~~~~~~
 
+1. jquery
+   todo: chang into jquery CDN
+
+2. fonts
+   todo: fonts CDN
 

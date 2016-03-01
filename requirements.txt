@@ -1,5 +1,6 @@
 # Django
 django==1.9.2
+jinja2
 
 # MariaDB
 mysql-python==1.2.5

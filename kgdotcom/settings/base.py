@@ -22,7 +22,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
         'USER': 'django',
-        'PASSWORD': 'password',
+        'PASSWORD': 'django',
         'HOST': 'localhost',
         'PORT': '3306',
         'TIME_ZONE': 'Asia/Shanghai',
@@ -78,7 +78,7 @@ MEDIA_URL = '/_sources/'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.jinja2.jinja2',
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
